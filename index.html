@@ -242,12 +242,45 @@
     color: #ccc;
   }
 
+/*code inspired from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_searchbar*/
+  .topnav {
+    overflow: hidden;
+    background-color: #a6f1a6;
+  }
+
+  .topnav input[type=text] {
+    float: right;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    border: none;
+    font-size: 17px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .topnav a, .topnav input[type=text] {
+      float: none;
+      display: block;
+      text-align: left;
+      width: 100%;
+      margin: 0;
+      padding: 14px;
+    }
+    
+    .topnav input[type=text] {
+      border: 1px solid #ccc;  
+    }
+  }
+
 </style>
 </head>
 <body>
 
 <div class="header">
   <h1 style="margin-left:1.5em"> eGROCERY</h1>
+  <div class="topnav">
+    <input type="text" placeholder="Search..">
+  </div>
   <button class="accordion">Categories ≡</button>
   <div class="panel">
     <ul style="color: black">
@@ -263,16 +296,6 @@
         <li><a href="#">Toiletries</a></li>
     </ul>
   </div>
-
-<!--   <button class="accordion">Section 2</button>
-  <div class="panel">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-  </div>
-
-  <button class="accordion">Section 3</button>
-  <div class="panel">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-  </div> -->
 
   <script>
   var acc = document.getElementsByClassName("accordion");
