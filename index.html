@@ -93,11 +93,12 @@
     .prev, .next,.text {font-size: 11px}
   }
 
-  //footer
+  footer
   .footer-clean {
     padding:50px 0;
     background-color:#fff;
     color:#4b4c4d;
+    text-align: center;
   }
 
   .footer-clean h3 {
@@ -105,6 +106,7 @@
     margin-bottom:12px;
     font-weight:bold;
     font-size:16px;
+    text-align: center;
   }
 
   .footer-clean ul {
@@ -122,7 +124,7 @@
   }
 
   .footer-clean ul a:hover {
-    opacity:1;
+    opacity:0.5;
   }
 
   .footer-clean .item.social {
@@ -158,7 +160,7 @@
   }
 
   .footer-clean .item.social > a:hover {
-    opacity:0.9;
+    opacity:0.5;
   }
 
   @media (max-width:991px) {
@@ -179,34 +181,51 @@
     font-size:13px;
     opacity:0.6;
   }
+
+  .column {
+    float: left;
+    width: 33.33%;
+  }
+  .column ul li {
+    display: flex;
+    justify-content: center;
+  }
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h1>eGROCERY</h1>
+  <h1 style="margin-left:1.5em"> eGROCERY</h1>
 </div>
 
 <div class="slideshow-container">
 
 <div class="mySlides fade">
   <img src="fruits.jpg" style="width:100%">
-  <div class="text">Caption Text</div>
+  <div class="text">Fruits & Vegetables</div>
 </div>
 
 <div class="mySlides fade">
   <img src="appliances.jpg" style="width:100%">
-  <div class="text">Caption Two</div>
+  <div class="text">Home Appliances</div>
 </div>
 
 <div class="mySlides fade">
   <img src="dairy.jpg" style="width:100%">
-  <div class="text">Caption Three</div>
+  <div class="text">Dairy Products</div>
 </div>
 
 <div class="mySlides fade">
   <img src="poultry.jpg" style="width:100%">
-  <div class="text">Caption Four</div>
+  <div class="text">Poultry</div>
 </div>
 
 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -223,6 +242,49 @@
 </div>
 
 <div class="footer-clean">
+  <footer> 
+    <div class="row">
+    <div class="column">
+     <h3>eGROCERY Inc.</h3>
+     <ul>
+        <li>Locally owned grocery store located in Saadiyat Island.</li>
+        <li>Abu Dhabi, UAE</li>
+        <li>800-000</li>
+        <li><a href="#">eGROCERY.com</a></li>
+    </ul> 
+    </div>
+    <div class="column">
+      <h3>About Us</h3>
+      <ul>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">History</a></li>
+          <li><a href="#">Location</a></li>
+      </ul>
+    </div>
+    <div class="column">
+      <h3>Contact Us</h3>
+      <ul>
+          <li><a href="#">Email</a></li>
+          <li><a href="#">Phone Number</a></li>
+          <li><a href="#">Facebook</a></li>
+      </ul>
+    </div>
+</div>
+<div class="col-lg-3 item social">
+      <a href="#"><i class="icon ion-social-facebook"></i></a>
+      <a href="#"><i class="icon ion-social-twitter"></i></a>
+      <a href="#"><i class="icon ion-social-snapchat"></i></a>
+      <a href="#"><i class="icon ion-social-instagram"></i></a>
+      <p class="copyright"> eGROCERY © 2021</p>
+    </div>
+  </footer> 
+
+</div>
+
+
+
+
+<!-- <div class="footer-clean">
         <footer>
             <div class="container">
                 <div class="row justify-content-center">
@@ -258,7 +320,7 @@
             </div>
         </footer>
     </div>
-
+ -->
 <script>
 var slideIndex = 1;
 showSlides(slideIndex);
