@@ -11,7 +11,7 @@
     background: #a6f1a6;
     color: white;
     font-size: 14px;
-    display: vertical-flex;
+    display: flex;
   }
 
   * {box-sizing: border-box}
@@ -246,6 +246,8 @@
   .topnav {
     overflow: hidden;
     background-color: #a6f1a6;
+    margin-left:0.5em;
+    width: 35%;
   }
 
   .topnav input[type=text] {
@@ -278,10 +280,7 @@
 
 <div class="header">
   <h1 style="margin-left:1.5em"> eGROCERY</h1>
-  <div class="topnav">
-    <input type="text" placeholder="Search..">
-  </div>
-  <button class="accordion">Categories ≡</button>
+  <button class="accordion" style="margin-left:0.5em">Categories ≡</button>
   <div class="panel">
     <ul style="color: black">
         <li><a href="#">Beauty Products</a></li>
@@ -296,7 +295,9 @@
         <li><a href="#">Toiletries</a></li>
     </ul>
   </div>
-
+  <div class="topnav">
+    <input type="text" placeholder="Search..">
+  </div>
   <script>
   var acc = document.getElementsByClassName("accordion");
   var i;
