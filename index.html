@@ -11,6 +11,7 @@
     background: #a6f1a6;
     color: white;
     font-size: 14px;
+    display: vertical-flex;
   }
 
   * {box-sizing: border-box}
@@ -191,11 +192,54 @@
     justify-content: center;
   }
 
-/* Clear floats after the columns */
-.row:after {
+  .row:after {
     content: "";
     display: table;
     clear: both;
+  }
+
+  .accordion {
+    background-color: #a6f1a6;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 20%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+
+  .panel {
+    padding: 10 18px;
+    background-color: #c9f2c9;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;    
+  }
+  .panel ul {
+    list-style-type: none;
+
+  }
+  .panel ul a{
+    color: black;
+    text-decoration: none;
+    padding-right: 20px;
+
+  }
+  
+  .panel ul li {
+    width: 100%;
+    padding: 10px;
+  }
+  .panel ul li :hover {
+    color: #ccc;
   }
 
 </style>
@@ -204,6 +248,49 @@
 
 <div class="header">
   <h1 style="margin-left:1.5em"> eGROCERY</h1>
+  <button class="accordion">Categories ≡</button>
+  <div class="panel">
+    <ul style="color: black">
+        <li><a href="#">Beauty Products</a></li>
+        <li><a href="#">Dairy Products</a></li>
+        <li><a href="#">Drinks</a></li>
+        <li><a href="#">Frozen Goods</a></li>
+        <li><a href="#">Fruits & Vegetables</a></li>
+        <li><a href="#">Grains & Bakery</a></li>
+        <li><a href="#">Poultry & Meat</a></li>
+        <li><a href="#">Seafood Products</a></li>
+        <li><a href="#">Snacks</a></li>
+        <li><a href="#">Toiletries</a></li>
+    </ul>
+  </div>
+
+<!--   <button class="accordion">Section 2</button>
+  <div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+
+  <button class="accordion">Section 3</button>
+  <div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div> -->
+
+  <script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      } 
+    });
+  }
+  </script>
+
 </div>
 
 <div class="slideshow-container">
